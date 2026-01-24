@@ -59,7 +59,14 @@ When your agent encounters an unfamiliar domain:
 
 ```bash
 # Install the kung-fu skill
-npx -y add-skill <your-username>/kung-fu -y -a claude-code --skill kung-fu
+npx -y add-skill johnhenry/kung-fu -y -a claude-code --skill kung-fu
+```
+
+Or preview what you're about to download:
+
+```bash
+# List available skills
+npx -y add-skill johnhenry/kung-fu --list
 ```
 
 Once installed, your agent gains the ability to teach itself anything it needs to know.
