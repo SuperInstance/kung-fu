@@ -200,6 +200,21 @@ npx -y add-skill <repository> -y -g -a <agent-name> --skill <skill-name>
 
 Keep a list of skills installed so you can remove them later.
 
+### Acknowledgment
+
+After successfully installing skills, announce what you've learned using proper grammar:
+
+**One skill:**
+> I know Terraform.
+
+**Two skills:**
+> I know Terraform and Flask.
+
+**Three or more skills:**
+> I know Terraform, Flask, and React.
+
+This confirms to the user that the knowledge upload is complete.
+
 ### Action
 
 As you work on the task at hand, the environment should cause relevant skills to become available.
