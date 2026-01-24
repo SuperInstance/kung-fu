@@ -1,6 +1,6 @@
 ---
 name: kung-fu
-description: Prepare yourself for specific tasks by discovering and installing relevant skills from known repositories or via remote search (skills.sh).
+description: Meta-skill for on-demand skill discovery and installation. Search 675+ curated skills locally or 71,000+ via skills.sh API. Self-teaching capability that finds, evaluates, and installs relevant skills when the agent lacks expertise. Use when encountering unfamiliar frameworks, languages, tools, or domains.
 ---
 
 ## Learning Skills

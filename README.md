@@ -14,7 +14,9 @@ This skill brings that concept to AI coding agents.
 
 ## The Construct
 
-When you invoke `/kung-fu`, your agent enters the Construct — a loading program where any skill can be uploaded instantly. Need to build a Flask API? *Upload Flask knowledge.* Deploying to Azure? *Upload Azure skills.* Writing smart contracts? *Upload security audit expertise.*
+Kung-fu is a **meta-skill** — a skill that teaches your agent how to learn other skills. Once installed, your agent can discover, evaluate, and install any skill it needs on demand.
+
+Need to build a Flask API? *Upload Flask knowledge.* Deploying to Azure? *Upload Azure skills.* Writing smart contracts? *Upload security audit expertise.*
 
 ```
 Tank, I need a pilot program for a React application.
@@ -48,12 +50,14 @@ curl -s "https://skills.sh/api/search?q=kung-fu&limit=10"
 
 ## Usage
 
-When your agent encounters an unfamiliar domain:
+Once installed, your agent automatically gains the ability to learn. When it encounters an unfamiliar domain:
 
 1. **Agent recognizes the gap** — "I need to work with Terraform but lack expertise"
-2. **Agent invokes kung-fu** — Searches local repositories, then remote if needed
-3. **Skills are uploaded** — Relevant knowledge is installed
+2. **Agent searches for skills** — First local repositories, then remote if needed
+3. **Skills are uploaded** — Relevant knowledge is installed via `add-skill` CLI
 4. **Agent opens its eyes** — "I know Terraform."
+
+The skill activates whenever your agent needs capabilities it doesn't have. No slash command required — it's always watching, always ready to learn.
 
 ## The Red Pill
 
