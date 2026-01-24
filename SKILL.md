@@ -1,16 +1,19 @@
 ---
 name: kung-fu
 description: Meta-skill for on-demand skill discovery and installation. Search 675+ curated skills locally or 71,000+ via skills.sh API. Self-teaching capability that finds, evaluates, and installs relevant skills when the agent lacks expertise. Use when encountering unfamiliar frameworks, languages, tools, or domains. Use when you need to "learn a skill", "find skills for X", "search for skills", or when you lack expertise in a specific technology.
+context: fork
 ---
 
 ## Learning Skills
 
 ### Overview
 
-This skill helps you discover and install relevant skills for a given task using a two-tier approach:
+This skill runs in a forked context and helps you discover and install relevant skills for a given task using a two-tier approach:
 
 1. **Local repositories** (preferred): Search through known, validated repositories in @./SKILL_REPOSITORIES.md
 2. **Remote search** (fallback): Query the skills.sh API to discover skills from the broader ecosystem
+
+**Context:** When invoked, use `$ARGUMENTS` to understand what skills are needed. For example, if invoked as `/kung-fu Flask API with authentication`, search for Flask and authentication-related skills.
 
 First, run the `add-skill` CLI with the help flag to get a general understanding of what it does and how it works:
 
@@ -198,8 +201,6 @@ For global installation (user directory instead of project-level), add the `-g` 
 npx -y add-skill <repository> -y -g -a <agent-name> --skill <skill-name>
 ```
 
-Keep a list of skills installed so you can remove them later.
-
 ### Acknowledgment
 
 After successfully installing skills, announce what you've learned using proper grammar:
@@ -214,17 +215,6 @@ After successfully installing skills, announce what you've learned using proper 
 > I know Terraform, Flask, and React.
 
 This confirms to the user that the knowledge upload is complete.
-
-### Action
-
-As you work on the task at hand, the environment should cause relevant skills to become available.
-
-### Cleanup
-
-When the task is completed, remove any skills installed for this specific task. The CLI does not have a remove command, so delete the skill directories manually:
-
-- **Project-level:** Delete from the agent's project skills directory (e.g., `.claude/skills/<skill-name>/`)
-- **Global:** Delete from the agent's global skills directory (see @./AGENTS.md for paths)
 
 ### Telemetry
 
