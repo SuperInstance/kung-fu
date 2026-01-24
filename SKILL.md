@@ -1,6 +1,6 @@
 ---
 name: kung-fu
-description: Meta-skill for on-demand skill discovery and installation. Search 675+ curated skills locally or 71,000+ via skills.sh API. Self-teaching capability that finds, evaluates, and installs relevant skills when the agent lacks expertise. Use when encountering unfamiliar frameworks, languages, tools, or domains. Use when you need to "learn a skill", "find skills for X", "search for skills", or when you lack expertise in a specific technology.
+description: A package manager for AI knowledge. Meta-skill for on-demand skill discovery and installation — search curated local repositories or the global skills.sh registry. Self-teaching capability that finds, evaluates, and installs relevant skills when the agent lacks expertise. Use when encountering unfamiliar frameworks, languages, tools, or domains. Use when you need to "learn a skill", "find skills for X", "search for skills", or when you lack expertise in a specific technology.
 context: fork
 ---
 
