@@ -101,4 +101,6 @@ The skills aren't real in the sense that they're not permanent parts of your age
 
 ## License
 
+MIT
+
 Free your mind.
