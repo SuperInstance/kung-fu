@@ -6,101 +6,54 @@
 >
 > — Neo & Morpheus, The Matrix (1999)
 
-## What if you could download knowledge directly into your brain?
+When your agent encounters an unfamiliar API or tool, it typically struggles. You find yourself pasting documentation and correcting the same mistakes. Kung-Fu addresses this by enabling agents to learn new capabilities on demand.
 
-In The Matrix, Neo sits in a chair, cables jack into his skull, and seconds later he opens his eyes with complete mastery of martial arts. No years of training. No endless practice. Just... **knowledge transfer**.
-
-This skill brings that concept to AI coding agents.
-
-## The Construct
-
-Kung-fu is a **meta-skill** — a skill that teaches your agent how to learn other skills. Once installed, your agent can discover, evaluate, and install any skill it needs on demand.
-
-Need to build a Flask API? *Upload Flask knowledge.* Deploying to Azure? *Upload Azure skills.* Writing smart contracts? *Upload security audit expertise.*
-
-```
-Tank, I need a pilot program for a React application.
-
-Loading...
-
-I know React.
-```
+This is a meta-skill for the Cocapn Fleet—a skill that allows your agent to learn other skills autonomously. When your agent identifies a knowledge gap, it can discover, validate, and temporarily install the required expertise, then unload it when done.
 
 ## How It Works
 
-### The Local Dojo (Known Skills)
+Kung-Fu operates in two stages:
 
-Your agent first searches through **675+ validated skills** across 15 curated repositories:
+1. **Local Search**: Your agent first checks a curated set of 675+ verified skills from 15 repositories, including sources like Anthropic, Microsoft, and Trail of Bits, covering areas from API development to security audits.
 
-| Source | Skills | Specialty |
-|--------|--------|-----------|
-| Anthropic | 30 | Documents, MCP, creative |
-| Microsoft | 13 | Azure AI, FastAPI |
-| Trail of Bits | 45 | Security audits |
-| Scientific | 142 | Bioinformatics, astronomy |
-| Community | 445+ | Everything else |
+2. **Remote Search**: If the local repository doesn't have the needed skill, it queries a public index of over 71,000 skills. Each skill is validated against the fleet trust index before being loaded.
 
-### The Matrix (Remote Search)
-
-If the local dojo doesn't have what you need, jack into the Matrix — a global index of **71,000+ skills** at [skills.sh](https://skills.sh):
-
-```bash
-curl -s "https://skills.sh/api/search?q=kung-fu&limit=10"
-```
+Skills are ephemeral—loaded for a specific task and then removed to prevent bloat.
 
 ## Usage
 
-Once installed, your agent automatically gains the ability to learn. When it encounters an unfamiliar domain:
+Once installed, the process is automatic. When your agent encounters an unfamiliar domain:
+1. It recognizes the knowledge gap.
+2. It searches locally, then remotely if necessary.
+3. It presents the skill it intends to load for your approval.
+4. It installs the skill, uses it, and then unloads it.
 
-1. **Agent recognizes the gap** — "I need to work with Terraform but lack expertise"
-2. **Agent searches for skills** — First local repositories, then remote if needed
-3. **Skills are uploaded** — Relevant knowledge is installed via `add-skill` CLI
-4. **Agent opens its eyes** — "I know Terraform."
+No special prompts or commands are required.
 
-The skill activates whenever your agent needs capabilities it doesn't have. No slash command required — it's always watching, always ready to learn.
+## Installation
 
-## The Red Pill
+Install the Kung-Fu skill into your agent runtime:
 
 ```bash
-# Install the kung-fu skill
 npx -y add-skill johnhenry/kung-fu -y -a claude-code --skill kung-fu
 ```
 
-Or preview what you're about to download:
-
+To preview available verified skills first:
 ```bash
-# List available skills
 npx -y add-skill johnhenry/kung-fu --list
 ```
 
-Once installed, your agent gains the ability to teach itself anything it needs to know.
+## Limitations
 
-## Philosophy
+Kung-Fu relies on the availability and quality of skills in the public index. While skills are validated, performance can vary based on the specific skill's documentation and the agent's ability to interpret it correctly for complex tasks.
 
-> *"I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it."*
+## Attribution
 
-This skill doesn't make your agent omniscient. It gives your agent the **awareness** that knowledge exists and the **ability** to acquire it on demand. The agent still decides what to learn and when.
-
-The difference between a good agent and a great one isn't what it knows — it's knowing that it *can* know more.
-
-## There Is No Spoon
-
-Traditional development: Learn a framework over months, practice for years, become an expert.
-
-Kung-fu development: Need expertise? Download it. Move on. Ship.
-
-The skills aren't real in the sense that they're not permanent parts of your agent's training. They're loaded on demand, used for the task, then cleaned up. Like programs in the Matrix — real enough to be useful, ephemeral enough to be replaceable.
+Kung-Fu is maintained by Superinstance & Lucineer (DiGennaro et al.). It is part of the Cocapn Fleet, an open-source agent runtime and fleet protocol.
 
 ---
 
-*"What are you trying to tell me? That I can write production code in any framework?"*
-
-*"No, Neo. I'm trying to tell you that when you're ready... you won't have to."*
-
----
-
-## License
-
-MIT
-
-Free your mind.
+<div>
+  <a href="https://the-fleet.casey-digennaro.workers.dev">The Fleet</a> • 
+  <a href="https://cocapn.ai">Cocapn</a>
+</div>
